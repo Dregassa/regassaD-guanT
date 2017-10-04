@@ -35,13 +35,24 @@ int strcmp2(char * s1, char * s2) {
 }
 
 int main() {
-  char s1[20] = "hello, ";
-  char s2[] = "World!";
-  printf("strncat2 s1, s2: %s\n", strncat2(s1, s2, sizeof(s1) - strlen(s2) - 1 ));
-  // printf("strcat2 s1, s2: %s\n", strcat2(s1, s2));
-  printf("strcmp: %d\n", strcmp("abcdef", "abcde")); //Big characters are apparently less than small characters
-  printf("strcmp2: %d\n", strcmp2("abcdef", "abcde"));
-
-  // printf("%d\n", 'a' > 0);
+  printf("\n------------------testing strncat/strcat----------------\n"); 
+  char a[] = "main";
+  char src[] = " street"; 
+  printf("testing strncat: %s\n", strncat(a, src , sizeof(a) - strlen(src) - 1));
+  char b[] = "main";
+  printf("testing my own strncat: %s\n", strncat2(b, " street",  sizeof(a) - strlen(src) - 1));
+  char c[]= "main";
+  printf("testing strcat: %s\n", strcat(c, " street"));
+  char d[]= "main";
+  printf("testing my own strcat: %s\n", strcat2(d, " street"));
+  printf("------------------finished testing strncat/strcat----------------\n\n");
+  printf("------------------testing strcmp----------------\n"); 
+  printf("testing strcmp (comparing hey to hey): %d\n", strcmp("hey", "hey"));  
+  printf("testing my own strcmp (comparing hey to hey): %d\n", strcmp2("hey", "hey"));
+  printf("testing strcmp (comparing Hello to HELLO): %d\n", strcmp("Hello", "HELLO"));  
+  printf("testing strcmp (comparing Hello to HELLO): %d\n", strcmp2("Hello", "HELLO"));
+  printf("testing strcmp (comparing h to \"): %d\n", strcmp("h", ""));
+  printf("testing strcmp (comparing h to \"): %d\n", strcmp2("h", ""));  
+  printf("------------------finished testing strcmp----------------\n\n");
   return 0;
 }
