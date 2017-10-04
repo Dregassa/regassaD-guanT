@@ -1,8 +1,14 @@
-main: mystring.o main.o
-	gcc -o main main.c
-
-mystring: mystring.c mystring.h
-	gcc -c mystring.c 
+all: main.o mystring.o
+	gcc -o strtest mystring.o main.o
+	
+main.o: main.c mystring.h
+	gcc -c main.c mystring.h 
+	
+mystring.o: mystring.c mystring.h
+	gcc -c mystring.c mystring.h
 
 clean:
 	rm *~ 
+
+run: all
+	./strtest
