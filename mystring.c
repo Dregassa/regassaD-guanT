@@ -57,7 +57,3 @@ char* mystrchr(char* s, char c){
   } 
   return s+i;
 }
-
-int main() {
-  return 0;
-}
