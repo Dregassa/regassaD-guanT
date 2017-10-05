@@ -1,5 +1,5 @@
 /*
-Terry Guan, Daniel Regasa 
+Terry Guan, Daniel Regasa
 str functions
 2017-10-04
  */
@@ -56,6 +56,8 @@ int main() {
   printf("testing strcmp (comparing Hello to HELLO): %d\n", mystrcmp("Hello", "HELLO"));
   printf("testing strcmp (comparing h to \"): %d\n", strcmp("h", ""));
   printf("testing strcmp (comparing h to \"): %d\n", mystrcmp("h", ""));
+  printf("testing strcmp (comparing H to h): %d\n", strcmp("H", "h"));
+  printf("testing strcmp (comparing H to h): %d\n", mystrcmp("H", "h"));
   printf("------------------finished testing strcmp----------------\n\n");
 
   return 0;
