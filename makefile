@@ -9,6 +9,7 @@ mystring.o: mystring.c mystring.h
 
 clean:
 	rm *o
+	rm *gch
 	rm *~
 
 run: all
