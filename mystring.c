@@ -8,24 +8,25 @@ int mystrlen(char* s){
   return length;
 }
 
-char * strncat2(char * dest, char * src, int n) {
-  char *a = src;
+char * mystrncat(char * dest, char * src, int n) {
   char *d2 = dest + mystrlen(dest);
+  // printf("d2: %d", *d2);
   int x = 0;
-  while (*a && n--) {
-    *(d2 + x) = *a;
-    a++;
+  while (*src && x < n) {
+    // printf("current d2: %c\ncurrent char: %c\n", *(d2 + x), *src);
+    *(d2 + x) = *src;
+    src++;
     x++;
   }
-  *(dest + mystrlen(dest)) = 0;
+  *(d2 + x) = 0;
   return dest;
 }
 
-char * strcat2(char * dest, char * src) {
-  return strncat2(dest, src, mystrlen(src));
+char * mystrcat(char * dest, char * src) {
+  return mystrncat(dest, src, mystrlen(src));
 }
 
-int strcmp2(char * s1, char * s2) {
+int mystrcmp(char * s1, char * s2) {
   char *a = s1;
   char *b = s2;
   while (*a || *b) {
@@ -41,10 +42,10 @@ int strcmp2(char * s1, char * s2) {
 }
 
 char* mystrcpy(char* dest, char* source){
-  int lensource = mystrlen(source); 
+  int lensource = mystrlen(source);
   int i = 0;
   for(;i <= lensource; i++){ // <= adds the null byte
-    *(dest + i) = *(source + i);	
+    *(dest + i) = *(source + i);
   }
   return dest;
 }
@@ -54,6 +55,6 @@ char* mystrchr(char* s, char c){
   while (*(s + i)){
     if (*(s + i) == c){return s+i;}
     i++;
-  } 
-  return s+i;
+  }
+  return 0;
 }
