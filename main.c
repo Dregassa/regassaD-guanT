@@ -1,3 +1,8 @@
+/*
+Terry Guan, Daniel Regasa 
+str functions
+2017-10-04
+ */
 #include <stdio.h>
 #include <string.h>
 #include "mystring.h"
